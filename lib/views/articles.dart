@@ -22,10 +22,7 @@ class ArticlesView extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               children: [
                 GestureDetector(
-                  onTap: (){
-                    final snackBar = SnackBar(content: Text("Africa Tapped"));
-                    Scaffold.of(context).showSnackBar(snackBar);
-                  },
+                  onTap: () {},
                   child: Container(
                     margin: EdgeInsets.fromLTRB(8, 4, 8, 4),
                     width: 100,

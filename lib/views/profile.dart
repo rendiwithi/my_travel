@@ -7,11 +7,11 @@ class ProfileWidget extends StatelessWidget {
       children: [
         Container(
           width: 50.0,
-          height: 50.0,
+          height: 30.0,
           decoration: new BoxDecoration(
             shape: BoxShape.circle,
             image: new DecorationImage(
-              fit: BoxFit.fill,
+              fit: BoxFit.contain,
               image: new NetworkImage(
                   "https://images.unsplash.com/photo-1570211776091-c19f426d37af?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"),
             ),
@@ -26,14 +26,14 @@ class ProfileWidget extends StatelessWidget {
               Text(
                 "WELCOME BACK",
                 style: TextStyle(
-                  fontSize: 15,
+                  fontSize: 11,
                   color: Color(0xFF321F0E),
                 ),
               ),
               Text(
                 "Wahyu Mahendra",
                 style: TextStyle(
-                  fontSize: 20,
+                  fontSize: 15,
                   color: Color(0xFF321F0E),
                 ),
               ),

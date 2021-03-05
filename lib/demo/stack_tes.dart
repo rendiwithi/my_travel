@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:my_travel/pages/favoritePage.dart';
+import 'package:my_travel/pages/homePage.dart';
+import 'package:my_travel/pages/profilePage.dart';
 
 class StackTest extends StatefulWidget {
   @override
@@ -11,23 +14,11 @@ class _StackTestState extends State<StackTest> {
   final _selectedBgColor = Colors.white;
   final _unselectedBgColor = Color(0xFFFC8E12);
   int _selectedIndex = 0;
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 30,
-    fontWeight: FontWeight.bold,
-  );
-  static const List<Widget> _widgetOptions = [
-    Text(
-      'Home',
-      style: optionStyle,
-    ),
-    Text(
-      'Fav',
-      style: optionStyle,
-    ),
-    Text(
-      'Profile',
-      style: optionStyle,
-    ),
+
+  static  List _widgetOptions = [
+    HomePage(),
+    FavoritePage(),
+    ProfilePage(),
   ];
   void _onTappedItem(int index) {
     setState(() {
@@ -97,75 +88,19 @@ class _StackTestState extends State<StackTest> {
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height * 0.22,
               child: Container(
+                margin: EdgeInsets.fromLTRB(10, 50, 10, 20),
                 decoration: BoxDecoration(
                   color: Color(0xFFFC8E12),
                   borderRadius: BorderRadius.circular(45),
                 ),
-                margin: EdgeInsets.fromLTRB(10, 30, 10, 35),
                 child: _getBtmNavBar(),
-                //         child: ClipRRect(
-                //           borderRadius: BorderRadius.all(Radius.circular(radius))
-                //           ),
-                //           child: BottomNavigationBar(
-                //             showSelectedLabels: false,
-                //             showUnselectedLabels: false,
-                //             currentIndex: _selectedIndex,
-                //             selectedItemColor: _selectedItemColor,
-                //             unselectedItemColor: _unselectedItemColor,
-                //             backgroundColor: Color(0xFFFC8E12),
-                //             items: [
-                //               BottomNavigationBarItem(
-                //                 icon: _buildIcon(Icons.navigation, 0),
-                //                 // icon: Icon(Icons.navigation),
-                //                 label: 'navigation',
-                //               ),
-                //               BottomNavigationBarItem(
-                //                 icon: _buildIcon(Icons.star, 1),
-                //                 label: 'star',
-                //               ),
-                //               BottomNavigationBarItem(
-                //                 icon: _buildIcon(Icons.person, 2),
-                //                 label: 'person',
-                //               ),
-                //             ],
-                //           ),
-                //         ),
-                //       ),
-                //     ),
+                //
               ),
-              //   Center(
-              // child: _widgetOptions.elementAt(_selectedIndex),
             ),
           ),
-          Center(
-            child: _widgetOptions.elementAt(_selectedIndex),
-          ),
+           _widgetOptions.elementAt(_selectedIndex),
         ],
       ),
-
-      // bottomNavigationBar: BottomNavigationBar(
-      //   showSelectedLabels: false,
-      //   showUnselectedLabels: false,
-      //   currentIndex: _selectedIndex,
-      //   selectedItemColor: _selectedItemColor,
-      //   unselectedItemColor: _unselectedItemColor,
-      //   backgroundColor: Colors.orange,
-      //   items: [
-      //     BottomNavigationBarItem(
-      //       icon: _buildIcon(Icons.navigation, 0),
-      //       // icon: Icon(Icons.navigation),
-      //       label: 'navigation',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: _buildIcon(Icons.star, 1),
-      //       label: 'star',
-      //     ),
-      //     BottomNavigationBarItem(
-      //       icon: _buildIcon(Icons.person, 2),
-      //       label: 'person',
-      //     ),
-      //   ],
-      // ),
     );
   }
 }
